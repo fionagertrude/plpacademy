@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Content & Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 800px;
+    }
+    header, main, footer {
+      margin-bottom: 2em;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5em;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.6em;
+      text-align: left;
+    }
+    fieldset {
+      margin-bottom: 1em;
+      padding: 1em;
+      border: 1px solid #ccc;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 0.5em;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.4em;
+      margin-bottom: 0.8em;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 0.6em 1.2em;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #3498db;
+    }
+    /* Responsive media */
+    video, audio, img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Enhanced HTML5 Content & Form Demo</h1>
+    <p>This page demonstrates lists, tables, media, and a fully accessible HTML5 form with native validation.</p>
+  </header>
+
+  <main>
+    <!-- Section: Lists -->
+    <section>
+      <h2>Types of Web Technologies</h2>
+      <p>Here are some popular categories and examples:</p>
+      <ul>
+        <li>Frontend
+          <ol>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ol>
+        </li>
+        <li>Backend
+          <ol>
+            <li>Node.js</li>
+            <li>Python (Django, Flask)</li>
+            <li>Ruby on Rails</li>
+          </ol>
+        </li>
+        <li>Databases
+          <ol>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section: Table -->
+    <section>
+      <h2>Sample Product Pricing</h2>
+      <table>
+        <caption>Product prices as of 2025</caption>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price (USD)</th>
+            <th>In Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wireless Mouse</td>
+            <td>Accessories</td>
+            <td>25.99</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Mechanical Keyboard</td>
+            <td>Accessories</td>
+            <td>89.99</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>27" Monitor</td>
+            <td>Displays</td>
+            <td>199.99</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Media -->
+    <section>
+      <h2>Media Examples</h2>
+      <h3>Image</h3>
+      <figure>
+        <img src="https://via.placeholder.com/600x300.png?text=Sample+Image" alt="Sample placeholder image" />
+        <figcaption>Placeholder image showcasing media embedding.</figcaption>
+      </figure>
+
+      <h3>Audio</h3>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Video</h3>
+      <video controls width="600" preload="metadata">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Section: Form -->
+    <section>
+      <h2>Contact & Feedback Form</h2>
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fullname">Full Name <sup>*</sup></label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Your full name"
+            required
+            minlength="3"
+            autocomplete="name"
+          />
+
+          <label for="email">Email Address <sup>*</sup></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+1-555-123-4567"
+            pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{3}[-.\s]?\d{4}$"
+            autocomplete="tel"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Feedback Details</legend>
+
+          <label for="subject">Subject <sup>*</sup></label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Support Request</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message <sup>*</sup></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            required
+            minlength="10"
+          ></textarea>
+
+          <label for="newsletter">
+            <input type="checkbox" id="newsletter" name="newsletter" />
+            Subscribe to newsletter
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Additional Information</legend>
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" max="2025-12-31" />
+
+          <label for="website">Your Website</label>
+          <input
+            type="url"
+            id="website"
+            name="website"
+            placeholder="https://example.com"
+            pattern="https?://.+"
+          />
+
+          <label for="readonlyinfo">Read-only Info</label>
+          <input type="text" id="readonlyinfo" name="readonlyinfo" value="Fixed Value" readonly />
+        </fieldset>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
